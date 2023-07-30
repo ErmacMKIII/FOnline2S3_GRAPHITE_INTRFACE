@@ -1,0 +1,49 @@
+GRAPHITE_INTERFACE
+is 3rd Party Pure Interface By Alexander "Ermac" Stojanovich.
+based on
+PEIOSv4 interface by drot/OdijSuppi/DrEex
+
+Changelog:::
+
+V1.4 subrelase (Last Update: 2020-03-05):
+- Some fixes for resolution 800x600. It use now separate images and things are not cut out.
+- Modified Crosshair ACTTOHIT.FRM is animated (4 FRAMES at 125ms). Also Modified Crosshair CROSSUS.FRM is golden non-animated.
+------------------------------------------------------------------------------------------------------------
+V1.5 subrealease (Last Update: 2020-04-16):
+- Added numpad image for electronic lock.
+- Sierra caves ladders included (check Better Ladders post).
+- Theatrical (movie) ambiance done by OpenGL shaders.
+------------------------------------------------------------------------------------------------------------
+V1.6 subrealease (Last Update: 2020-07-28 05:10 PM):
+- Nothing was left untouched - interfaces were submitted through the private Java program of my own to paint them.
+- Added blue and green flavour.
+- Fixed ammo display number when count is over > 999 not displayed. [Firewall]
+------------------------------------------------------------------------------------------------------------
+V1.7 subrealease (Last Update: 2020-12-19 02:25 PM):
+- Enhanced support for resolutions 2560x1440 (QHD) and 3840x2160 (UHD aka 4K).
+- Full body (contour) colorizing intensity is lowered; check comparison on following images:
+------------------------------------------------------------------------------------------------------------
+V1.8 subrealease (Last Update: 2021-02-16 02:10 PM):
+- Crucial change -> Shader code optimized in favor of better performance (Check effects files in Notepad++).
+- Ground Pickup reworked from vanilla and adapted to PURE interface.
+- Global Map Clock is now painted in the same colour of the interface, RED/GREEN/BLUE/WHITE.
+------------------------------------------------------------------------------------------------------------
+V2.0 release (Last Update: 2021-07-31 10:30 PM):
+- Fixed misaligned text of the log in the main menu (as left over from PEIOSv4)
+- Fixes for Inventory button 
+- Worldmap Icons changed (it displays "YOU" where you currently at at "X" where you're going)
+- Font changed (barter, character, inventory, use-inven, etc.)
+- Improved approximation of the expm1 in the data/effects (approx is used to improve performance)
+------------------------------------------------------------------------------------------------------------
+V2.1 release (Last Update: 2022-01-12 07:30 AM):
+- Using Kaleidoscope Graphite 4-Mirror Pattern w/ Roberts Edge detect on some images.
+- Black shadow leftover fixed (FixBoy, Invbox, Perk etc.)
+- Ground pickup item column offset fixed.
+------------------------------------------------------------------------------------------------------------
+V2.2 release (Last Update: 2022-12-23 08:15 AM):
+- Mix of old & new GRAPHITE pattern.
+- Home button for town world.
+- HDR (High Dynamic Range) included.
+
+For Older Releases feel free to contact on Discord, Ermac #1844.
+Njoy using GRAPHITE interface!

@@ -1,0 +1,13 @@
+fps=1
+count=6
+
+offs_x=0
+offs_y=0
+
+[dir_0]
+frm_0=autocursor_hex_anim\1.png
+frm_1=autocursor_hex_anim\2.png
+frm_2=autocursor_hex_anim\3.png
+frm_3=autocursor_hex_anim\4.png
+frm_4=autocursor_hex_anim\5.png
+frm_5=autocursor_hex_anim\6.png
