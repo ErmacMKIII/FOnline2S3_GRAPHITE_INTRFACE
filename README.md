@@ -10,7 +10,7 @@ Q: Which version is actual?
 A: Actual version is 2.2.
 
 Q: Does it come in conjunction with Lil'MoD/redhex?
-A: Yes, it's expansion of [b]LilModV13[/b]. It is expansion from ordinary mod to complex interface.
+A: Yes, it's expansion of LilModV13. It is expansion from ordinary mod to complex interface.
 
 Q: What's the modification?
 A: Goal is to make the interface with sharp fonts, white borders, black outlines, translucent (around 67%) and to be black and white. Also theatrical ambiance effect done by OpenGL shaders.
@@ -19,7 +19,7 @@ Q: Is it finished?
 A: It's in public release state so people can use it.
 
 Q: What resolutions are supported?
-Supported resolutions are 800x600(minimal), 1024x768, 1280x1024, 1366x768, 1680x1050, 1920x1080, 2560x1440 and 3840x2160.
+A: Supported resolutions are 800x600(minimal), 1024x768, 1280x1024, 1366x768, 1680x1050, 1920x1080, 2560x1440 and 3840x2160.
 
 Q: May I join the development of it?
 A: Nope, not at this moment.. However you can fork and create your own.
