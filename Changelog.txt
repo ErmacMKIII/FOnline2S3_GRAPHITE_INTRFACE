@@ -44,6 +44,9 @@ V2.2 release (Last Update: 2022-12-23 08:15 AM):
 - Mix of old & new GRAPHITE pattern.
 - Home button for town world.
 - HDR (High Dynamic Range) included.
+------------------------------------------------------------------------------------------------------------
+V2.3 release (Last Update: 2023-09-13 04:50 AM):
+- Post-Processing of images with HQX3x algorithm.
 
 For Older Releases feel free to contact on Discord, Ermac #1844.
 Njoy using GRAPHITE interface!

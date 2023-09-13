@@ -4,10 +4,10 @@ FOnline2S3 Custom Interface
 Q: What is it?
 A: Pure Interface based on PEIOSv4 interface by drot/Odijsuppi in black n white variant. It's only for FOnline2. Comes in red, green, blue and white flavour.
 
-![Alt text](GRAPHITE_V2.2.jpg?raw=false "Showing all flavours")
+![Alt text](ARTC/GRAPHITE_V2.3.jpg?raw=false "Showing all flavours")
 
 Q: Which version is actual?
-A: Actual version is 2.2.
+A: Actual version is 2.3.
 
 Q: Does it come in conjunction with Lil'MoD/redhex?
 A: Yes, it's expansion of LilModV13. It is expansion from ordinary mod to complex interface.
