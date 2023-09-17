@@ -45,7 +45,7 @@ V2.2 release (Last Update: 2022-12-23 08:15 AM):
 - Home button for town world.
 - HDR (High Dynamic Range) included.
 ------------------------------------------------------------------------------------------------------------
-V2.3 release (Last Update: 2023-09-13 04:50 AM):
+V2.3 release (Last Update: 2023-09-17 02:35 AM):
 - Post-Processing of images with HQX3x algorithm.
 
 For Older Releases feel free to contact on Discord, Ermac #1844.
