@@ -39,10 +39,10 @@ can install them separately. Gameplay with them is significantly improved them.
 This repository includes several of them, secludedly placed in ```ADDONS``` directory:
 
 Onground Items Higlighther - improve search & locating specific items on the ground or item containers.
-![Alt text](ADDONS/HiglightherZ1.jpg?raw=false "Onground Items Higlighther")
+![Alt text](ADDONS/HiglightherZ1.png?raw=false "Onground Items Higlighther")
 
 Clear Font Enhancer - improve font general appearance.
-![Alt text](ADDONS/RazorFontZ5.jpg?raw=false "Razor Font Enhancer")
+![Alt text](ADDONS/RazorFontZ5.png?raw=false "Razor Font Enhancer")
 
 No Walls Mod - Replace walls with hexagons thus providing better focus on gameplay
 ![Alt text](ADDONS/NoWallsModZ9.jpg?raw=false "Walls remove mod")
