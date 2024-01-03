@@ -39,33 +39,17 @@ const float B = 0.077847;
 const float C = 0.195346;
 
 // LUMA Coefficients
-const vec3 LUMA = vec3(0.2126, 0.7152, 0.0722);
-
-// calculate the average of nine surrounding pixels to get the blur, in RGBA
-vec4 texBlurRGBA() { 
-	vec2 offset = vec2(ColorMapSize.z, ColorMapSize.w);
-	vec4 sum = A * (texture2D(ColorMap, vec2(texCoord.x - offset.x, texCoord.y)) +	// WEST
-			   texture2D(ColorMap, vec2(texCoord.x + offset.x, texCoord.y)) + // EAST
-			   texture2D(ColorMap, vec2(texCoord.x, texCoord.y - offset.y)) +	// NORTH
-			   texture2D(ColorMap, vec2(texCoord.x, texCoord.y + offset.y))) +  // SOUTH			   
-			   C * texture2D(ColorMap, texCoord) + // CENTER
-			   B * (texture2D(ColorMap, vec2(texCoord.x - offset.x, texCoord.y - offset.y)) + // NORTHWEST
-			   texture2D(ColorMap, vec2(texCoord.x + offset.x, texCoord.y + offset.y)) + // SOUTHEAST
-			   texture2D(ColorMap, vec2(texCoord.x - offset.x, texCoord.y + offset.y)) + // SOUTHWEST
-			   texture2D(ColorMap, vec2(texCoord.x + offset.x, texCoord.y - offset.y))); // NORTHEAST
-	return sum;
-}
+const vec3 LUMA = vec3(0.299, 0.587, 0.114);
 
 void main() {
-	vec4 texColor = texture2D(ColorMap, texCoord); // texture Color
-	vec4 texBlur = texBlurRGBA(); // blurred texture Color 			
+	vec4 texColor = texture2D(ColorMap, texCoord); // texture Color	
 	float luma = dot(color.rgb * texColor.rgb, LUMA);
 	
-	vec3 shpColor = color.rgb * (texColor.rgb + (texColor.rgb - texBlur.rgb) * AMOUNT); // substract the blur to get the sharpness	
-	vec3 hdrColor = shpColor + shpColor * vec3(luma) / (vec3(1.0) + vec3(luma));
+	vec3 originColor = color.rgb * texColor.rgb; // originalColor
+	vec3 hdrColor = originColor + originColor * vec3(luma) / (vec3(1.0) + vec3(luma));
 	
 	gl_FragColor.rgb = 2.0 * hdrColor; // increase contrast (default)
-	gl_FragColor.a = color.a * texColor.a; // keep the alpha	
+	gl_FragColor.a = color.a * texColor.a; // keep the alpha		
 }
 
 #endif

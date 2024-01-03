@@ -9,7 +9,7 @@
 sampler2D ColorMap;
 
 // LUMA Coefficients
-const float3 LUMA = float3(0.2126f, 0.7152f, 0.0722f);
+const float3 LUMA = float3(0.299f, 0.587f, 0.114f);
 
 // Vertex shader
 AppToVsToPs_2D VSSimple(AppToVsToPs_2D input)

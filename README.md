@@ -4,7 +4,7 @@ FOnline2S3 Custom Interface
 Q: What is it?
 A: Pure Interface based on PEIOSv4 interface by drot/Odijsuppi in black n white variant. It's only for FOnline2. Comes in red, green, blue and white flavour.
 
-![Alt text](ARTC/GRAPHITE_V2.3.jpg?raw=false "Showing all flavours")
+![Alt text](ARTC/GRAPHITE_V2.3_PLUS.jpg?raw=false "Showing all flavours")
 
 Q: Which version is actual?
 A: Actual version is 2.3.
@@ -31,3 +31,20 @@ A: There're two ways:
 
 Q: Who's involved in making of this?
 A: Wesan provided me the latest FOnline2 logo and screenshot of Glow appearing in the Main Menu. PEIOSv4 is work of DoctorEex/Odijsuppi. Then in the end I will humbly mention myself.
+
+# Add-On Mods
+
+Add-on Mods are separated mods from original interface and user (referenced as player)
+can install them separately. Gameplay with them is significantly improved them.
+This repository includes several of them, secludedly placed in ```ADDONS``` directory:
+
+Onground Items Higlighther - improve search & locating specific items on the ground or item containers.
+![Alt text](ADDONS/HiglightherZ1.jpg?raw=false "Onground Items Higlighther")
+
+Clear Font Enhancer - improve font general appearance.
+![Alt text](ADDONS/RazorFontZ5.jpg?raw=false "Razor Font Enhancer")
+
+No Walls Mod - Replace walls with hexagons thus providing better focus on gameplay
+![Alt text](ADDONS/NoWallsModZ9.jpg?raw=false "Walls remove mod")
+
+Can be installed in the same fashion as interface or any mod.

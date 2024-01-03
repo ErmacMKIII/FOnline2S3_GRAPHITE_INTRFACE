@@ -26,8 +26,7 @@ void main() {
 
 //--------------------FRAGMENT_SHADER--------------------
 #ifdef FRAGMENT_SHADER
-#extension GL_EXT_gpu_shader4 : enable		 
-
+	 
 uniform sampler2D ColorMap; // Main texture
 uniform vec4 ColorMapSize; // Main texture size: x - width, y - height, z - texel width, w - texel height
 uniform vec4 SpriteBorder; // Sprite border: x - left, y - top, z - right, w - bottom
@@ -35,9 +34,9 @@ uniform float TimeGame; // Current game time [0,120), in seconds, cycled
 varying vec4 color;
 varying vec2 texCoord;
 
-const float OT = 1.0; // is OUTLINE THICKNESS
+const float OT = 1.5; // is OUTLINE THICKNESS
 					// is non-negative decimal number 
-const float AMOUNT = 1.0; // is sharpening amount
+const float AMOUNT = 0.5; // is sharpening amount
 const float EXPOSURE = 2.0; // is exposure value
 					
 // Single pass Gaussian Blur coefficients
