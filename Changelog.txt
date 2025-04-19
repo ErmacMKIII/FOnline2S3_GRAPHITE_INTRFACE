@@ -47,6 +47,32 @@ V2.2 release (Last Update: 2022-12-23 08:15 AM):
 ------------------------------------------------------------------------------------------------------------
 V2.3 release (Last Update: 2023-09-17 02:35 AM):
 - Post-Processing of images with HQX3x algorithm.
+------------------------------------------------------------------------------------------------------------
+V2.5 release (Last Update: 2025-03-31)
+
+1. Interface Effects Shader (GLSL)
+
+Blur: 9 → 5 samples
+Sharpening: Optimized (texColor - texBlur) math
+Conditionals: Added USE_SHARPEN/USE_HDR flags
+
+2. Sprite Egg Shader (GLSL/HLSL)
+
+Egg Effect: Pre-calculated breather = abs(cos(time))
+Branching: Added [branch] hint (HLSL)
+Transparency: Optimized alpha compositing
+
+3. Full Body Contour Shader (GLSL)
+
+Breathing Effect: Replaced mod() with fract() for smoother waves
+Edge Detection: Pre-clamped texture coordinates
+Case Logic: Streamlined opaque/edge/default branches
+
+4. FOnline Default Shaders (HLSL)
+------------------------------------------------------------------------------------------------------------
+HDR: Combined luma calculations
+Constants: Named CONTRAST_BOOST etc.
+Egg Pass: Reduced redundant samples
 
 For Older Releases feel free to contact on Discord, Ermac #1844.
 Njoy using GRAPHITE interface!
