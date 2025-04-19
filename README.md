@@ -45,7 +45,7 @@ Razor Font - improve font overall appearance with smoothness.
 ![Alt text](ADDONS/RazorFontZ5.png?raw=false "Razor Font")
 
 High Contrast Font - improve font overall Contrast.
-![Alt text](ADDONS/HightContrastFont.jpg?raw=false "Hight Contrast Font")
+![Alt text](ADDONS/HighContrastFont.jpg?raw=false "Hight Contrast Font")
 
 No Walls Mod - Replace walls with hexagons thus providing better focus on gameplay
 ![Alt text](ADDONS/NoWallsModZ9.jpg?raw=false "Walls remove mod")
