@@ -1,7 +1,10 @@
-// Interface effects made by Ermac
-// Review 2022-01-26 for GRAPHITE_V2.x
+// Optimized Interface Effects Shader
+// Based on original by Ermac, optimized for GRAPHITE_V2.x
 
 #version 110
+
+// Set medium precision for better performance on mobile GPUs
+precision mediump float;
 
 //---------------------VERTEX_SHADER---------------------
 #ifdef VERTEX_SHADER
@@ -15,9 +18,9 @@ varying vec4 color;
 varying vec2 texCoord;
 
 void main() {
-	gl_Position = ProjectionMatrix * vec4(InPosition, 0.0, 1.0);	
-	color = InColor;
-	texCoord = InTexCoord;	
+    gl_Position = ProjectionMatrix * vec4(InPosition, 0.0, 1.0);    
+    color = InColor;
+    texCoord = InTexCoord;    
 }
 
 #endif
@@ -26,46 +29,58 @@ void main() {
 //--------------------FRAGMENT_SHADER--------------------
 #ifdef FRAGMENT_SHADER
 
-uniform sampler2D ColorMap; // Main texture
-uniform vec4 ColorMapSize; // Main texture size: x - width, y - height, z - texel width, w - texel height
+uniform sampler2D ColorMap;
+uniform vec4 ColorMapSize;
 varying vec4 color;
 varying vec2 texCoord;
 
-const float AMOUNT = 1.0; // is sharpening amount
+// Define effect toggles (comment/uncomment as needed)
+#define USE_SHARPEN
+#define USE_HDR
 
-// Single pass Gaussian Blur coefficients
-const float A = 0.123317;
-const float B = 0.077847;
-const float C = 0.195346;
+const float AMOUNT = 0.125; // Sharpening amount
 
-// LUMA Coefficients
-const vec3 LUMA = vec3(0.2126, 0.7152, 0.0722);
+// Optimized 5-sample blur coefficients
+const float CENTER_WEIGHT = 0.4;
+const float SIDE_WEIGHT = 0.15;
 
-// calculate the average of nine surrounding pixels to get the blur, in RGBA
-vec4 texBlurRGBA() { 
-	vec2 offset = vec2(ColorMapSize.z, ColorMapSize.w);
-	vec4 sum = A * (texture2D(ColorMap, vec2(texCoord.x - offset.x, texCoord.y)) +	// WEST
-			   texture2D(ColorMap, vec2(texCoord.x + offset.x, texCoord.y)) + // EAST
-			   texture2D(ColorMap, vec2(texCoord.x, texCoord.y - offset.y)) +	// NORTH
-			   texture2D(ColorMap, vec2(texCoord.x, texCoord.y + offset.y))) +  // SOUTH			   
-			   C * texture2D(ColorMap, texCoord) + // CENTER
-			   B * (texture2D(ColorMap, vec2(texCoord.x - offset.x, texCoord.y - offset.y)) + // NORTHWEST
-			   texture2D(ColorMap, vec2(texCoord.x + offset.x, texCoord.y + offset.y)) + // SOUTHEAST
-			   texture2D(ColorMap, vec2(texCoord.x - offset.x, texCoord.y + offset.y)) + // SOUTHWEST
-			   texture2D(ColorMap, vec2(texCoord.x + offset.x, texCoord.y - offset.y))); // NORTHEAST
-	return sum;
+// LUMA Coefficients - CCIR 601 
+const vec3 LUMA = vec3(0.299, 0.587, 0.114);
+
+// Pre-calculate texture offset
+#define OFFSET vec2(ColorMapSize.z, ColorMapSize.w)
+
+// Optimized blur function (5 samples instead of 9)
+vec4 texBlurRGBA() {
+    vec4 sum = texture2D(ColorMap, texCoord) * CENTER_WEIGHT;
+    sum += texture2D(ColorMap, texCoord + vec2(-OFFSET.x, 0.0)) * SIDE_WEIGHT;
+    sum += texture2D(ColorMap, texCoord + vec2(OFFSET.x, 0.0)) * SIDE_WEIGHT;
+    sum += texture2D(ColorMap, texCoord + vec2(0.0, -OFFSET.y)) * SIDE_WEIGHT;
+    sum += texture2D(ColorMap, texCoord + vec2(0.0, OFFSET.y)) * SIDE_WEIGHT;
+    return sum;
 }
 
 void main() {
-	vec4 texColor = texture2D(ColorMap, texCoord); // texture Color
-	vec4 texBlur = texBlurRGBA(); // blurred texture Color 			
-	float luma = dot(color.rgb * texColor.rgb, LUMA);
-	
-	vec3 shpColor = color.rgb * (texColor.rgb + (texColor.rgb - texBlur.rgb) * AMOUNT); // substract the blur to get the sharpness	
-	vec3 hdrColor = shpColor + shpColor * vec3(luma) / (vec3(1.0) + vec3(luma));
-	
-	gl_FragColor.rgb = 2.0 * hdrColor; // increase contrast (default)
-	gl_FragColor.a = color.a * texColor.a; // keep the alpha	
+    vec4 texColor = texture2D(ColorMap, texCoord);
+    
+    #ifdef USE_SHARPEN
+        vec4 texBlur = texBlurRGBA();
+        // Optimized sharpening calculation
+        vec3 shpColor = texColor.rgb * (1.0 + AMOUNT) - (texBlur.rgb * AMOUNT);
+        shpColor *= color.rgb;
+    #else
+        vec3 shpColor = color.rgb * texColor.rgb;
+    #endif
+    
+    #ifdef USE_HDR
+        float luma = dot(shpColor, LUMA);
+        vec3 hdrColor = shpColor + shpColor * vec3(luma) / (vec3(1.0) + vec3(luma));
+        gl_FragColor.rgb = 2.0 * hdrColor;
+    #else
+        gl_FragColor.rgb = shpColor * 2.0;
+    #endif
+    
+    gl_FragColor.a = color.a * texColor.a;
 }
 
 #endif

@@ -1,6 +1,6 @@
 //
-// Optimized FOnline Sprite Effect with Egg Transparency
-// Based on original, optimized for GRAPHITE_V2.x
+// FOnline Sprite Effect with Egg Transparency (ps_2_0 compatible)
+// Optimized for GRAPHITE_V2.x
 //
 
 #include "IOStructures.inc"
@@ -11,15 +11,15 @@ sampler2D EggMap;
 // Constants
 static const float3 LUMA = float3(0.299f, 0.587f, 0.114f);
 static const float CONTRAST_BOOST = 2.0f;
-static const float EGG_THRESHOLD = 0.0f; // For egg coord comparison
+static const float EGG_THRESHOLD = 0.001f; // Added small epsilon for safety
 
-// Vertex shader - remains simple pass-through
+// Vertex shader remains unchanged
 AppToVsToPs_2DEgg VSSimple(AppToVsToPs_2DEgg input)
 {
     return input;
 }
 
-// Optimized Pixel shader
+// Pixel shader (ps_2_0 compatible)
 float4 PSSimple(AppToVsToPs_2DEgg input) : COLOR
 {
     // Sample main texture
@@ -33,21 +33,13 @@ float4 PSSimple(AppToVsToPs_2DEgg input) : COLOR
     float lumaFactor = luma / (1.0f + luma);
     float3 finalColor = baseColor * (1.0f + lumaFactor) * CONTRAST_BOOST;
     
-    // Handle alpha
-    float alpha = texColor.a * input.Diffuse.a;
-    
-    // Egg transparency effect - optimized branch
-    [branch]
-    if (any(input.TexEggCoord != EGG_THRESHOLD)) {
-        alpha *= tex2D(EggMap, input.TexEggCoord).a;
-    }
+    // Handle alpha - using lerp instead of branch
+    float4 eggSample = tex2D(EggMap, input.TexEggCoord);
+    float hasEgg = step(EGG_THRESHOLD, max(abs(input.TexEggCoord.x), abs(input.TexEggCoord.y)));
+    float alpha = texColor.a * input.Diffuse.a * lerp(1.0f, eggSample.a, hasEgg);
     
     // Compose final output
-    float4 output;
-    output.rgb = finalColor;
-    output.a = alpha;
-    
-    return output;
+    return float4(finalColor, alpha);
 }
 
 // Techniques

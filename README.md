@@ -4,7 +4,7 @@ FOnline2S3 Custom Interface
 Q: What is it?
 A: Pure Interface based on PEIOSv4 interface by drot/Odijsuppi in black n white variant. It's only for FOnline2. Comes in red, green, blue and white flavour.
 
-![Alt text](ARTC/GRAPHITE_V2.3_PLUS.jpg?raw=false "Showing all flavours")
+![Alt text](ARTC/GRAPHITE_V2.5.jpg?raw=false "Showing all flavours")
 
 Q: Which version is actual?
 A: Actual version is 2.3.
