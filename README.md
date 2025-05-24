@@ -7,7 +7,7 @@ A: Pure Interface based on PEIOSv4 interface by drot/Odijsuppi in black n white 
 ![Alt text](ARTC/GRAPHITE_V2.5.jpg?raw=false "Showing all flavours")
 
 Q: Which version is actual?
-A: Actual version is 2.3.
+A: Actual version is 2.5.
 
 Q: Does it come in conjunction with Lil'MoD/redhex?
 A: Yes, it's expansion of LilModV13. It is expansion from ordinary mod to complex interface.
