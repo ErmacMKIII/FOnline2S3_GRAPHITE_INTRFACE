@@ -73,6 +73,9 @@ Case Logic: Streamlined opaque/edge/default branches
 HDR: Combined luma calculations
 Constants: Named CONTRAST_BOOST etc.
 Egg Pass: Reduced redundant samples
+------------------------------------------------------------------------------------------------------------
+V2.6 release (Last Update: 2025-09-24)
+- Post-Processing of images with HQX4x algorithm.
 
 For Older Releases feel free to contact on Discord, Ermac #1844.
 Njoy using GRAPHITE interface!

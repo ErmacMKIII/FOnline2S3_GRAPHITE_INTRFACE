@@ -4,10 +4,10 @@ FOnline2S3 Custom Interface
 Q: What is it?
 A: Pure Interface based on PEIOSv4 interface by drot/Odijsuppi in black n white variant. It's only for FOnline2. Comes in red, green, blue and white flavour.
 
-![Alt text](ARTC/GRAPHITE_V2.5.jpg?raw=false "Showing all flavours")
+![Alt text](ARTC/GRAPHITE_V2.6.jpg?raw=false "Showing all flavours")
 
 Q: Which version is actual?
-A: Actual version is 2.5.
+A: Actual version is 2.6.
 
 Q: Does it come in conjunction with Lil'MoD/redhex?
 A: Yes, it's expansion of LilModV13. It is expansion from ordinary mod to complex interface.
@@ -31,6 +31,28 @@ A: There're two ways:
 
 Q: Who's involved in making of this?
 A: Wesan provided me the latest FOnline2 logo and screenshot of Glow appearing in the Main Menu. PEIOSv4 is work of DoctorEex/Odijsuppi. Then in the end I will humbly mention myself.
+
+# Directories and files
+```
+# Directory Structure
+├───ADDONS
+├───ARTC
+├───FILES
+├───INTRFACE_PRODUCTION
+├───INTRFACE_PRODUCTION_HQN4X
+├───INTRFACE_SOURCE
+├───PATCH
+├───SCREENSHOTS
+└───SOURCE
+```
+Explanation:
+- ADDONS => Add-on Mods to enhance visual experience. This includes HighContrastFont, NoWallsModZ9 and item HighlighterZ1.
+- ARTC => Contains screenshots and image stuff not relevant to interface.
+- FILES => Contains ready files for release. Namely zip archives for release.
+- INTRFACE_PRODUCTION => Contains Production files from source files (magenta colorized) done by Java Program.
+- INTRFACE_PRODUCTION_HQN4X => Contains 2nd Production files from 1st Production by FOnline Scalex and so by HQN4x algorithm.
+- PATCH => Contains some image files for some minor fixes to the interface.
+- SOURCE => Contains Source GIMP (.xcf) files.
 
 # Add-On Mods
 
