@@ -4,10 +4,14 @@ FOnline2S3 Custom Interface
 Q: What is it?
 A: Pure Interface based on PEIOSv4 interface by drot/Odijsuppi in black n white variant. It's only for FOnline2. Comes in red, green, blue and white flavour.
 
-![Alt text](ARTC/GRAPHITE_V2.6.jpg?raw=false "Showing all flavours")
+Screen of GRAPHITE_V2.6, from 2K25.
+![Alt text](ARTC/GRAPHITE_V2.6.jpg?raw=false "Showing all flavours of 2.6")
+
+Screen of GRAPHITE_V2.6U, from 2K26. Newest.
+![Alt text](ARTC/GRAPHITE_V2.6U.jpg?raw=false "Showing all flavours of 2.6U")
 
 Q: Which version is actual?
-A: Actual version is 2.6.
+A: Actual version is 2.6/2.6U.
 
 Q: Does it come in conjunction with Lil'MoD/redhex?
 A: Yes, it's expansion of LilModV13. It is expansion from ordinary mod to complex interface.
@@ -49,8 +53,8 @@ Explanation:
 - ADDONS => Add-on Mods to enhance visual experience. This includes HighContrastFont, NoWallsModZ9 and item HighlighterZ1.
 - ARTC => Contains screenshots and image stuff not relevant to interface.
 - FILES => Contains ready files for release. Namely zip archives for release.
+- FILES_SCALE3X => Contains 2nd Production files from 1st Production by FOnline Scalex and so by Scale3x algorithm. Also contains files for release.
 - INTRFACE_PRODUCTION => Contains Production files from source files (magenta colorized) done by Java Program.
-- INTRFACE_PRODUCTION_HQN4X => Contains 2nd Production files from 1st Production by FOnline Scalex and so by HQN4x algorithm.
 - PATCH => Contains some image files for some minor fixes to the interface.
 - SOURCE => Contains Source GIMP (.xcf) files.
 

@@ -1,0 +1,183 @@
+Version 2
+Image	BigNumbers2.png			
+YAdvance	0			
+				
+Letter	    	'	'
+	PositionX	1		
+	PositionY	2		
+	XAdvance	12		
+				
+Letter	    	'0'	
+	PositionX	1		
+	PositionY	2		
+	Width	13	
+	Height	24		
+	XAdvance	12
+				
+Letter	    	'1'	
+	PositionX	15		
+	PositionY	2		
+	Width	13		
+	Height	24		
+	XAdvance	12		
+				
+Letter	    	'2'	
+	PositionX	29		
+	PositionY	2		
+	Width	13		
+	Height	24		
+	XAdvance	12		
+				
+Letter	    	'3'	
+	PositionX	43		
+	PositionY	2		
+	Width	13		
+	Height	24		
+	XAdvance	12		
+				
+Letter	    	'4'	
+	PositionX	57		
+	PositionY	2		
+	Width	13		
+	Height	24		
+	XAdvance	12		
+				
+Letter	    	'5'	
+	PositionX	71		
+	PositionY	2		
+	Width	13		
+	Height	24		
+	XAdvance	12		
+				
+Letter	    	'6'	
+	PositionX	85		
+	PositionY	2		
+	Width	13		
+	Height	24		
+	XAdvance	12		
+				
+Letter	    	'7'	
+	PositionX	99		
+	PositionY	2		
+	Width	13		
+	Height	24		
+	XAdvance	12		
+				
+Letter	    	'8'	
+	PositionX	113		
+	PositionY	2		
+	Width	13		
+	Height	24		
+	XAdvance	12		
+				
+Letter	    	'9'	
+	PositionX	127		
+	PositionY	2		
+	Width	13		
+	Height	24		
+	XAdvance	12		
+				
+Letter	    	':'	
+	PositionX	141		
+	PositionY	2		
+	Width	13		
+	Height	24		
+	XAdvance	12		
+				
+Letter	    	';'	
+	PositionX	155		
+	PositionY	2		
+	Width	13		
+	Height	24		
+	XAdvance	12		
+				
+Letter	    	'<'	
+	PositionX	169		
+	PositionY	2		
+	Width	13		
+	Height	24		
+	XAdvance	12		
+				
+Letter	    	'@'	
+	PositionX	1		
+	PositionY	25		
+	Width	13		
+	Height	24		
+	XAdvance	12		
+				
+Letter	    	'A'	
+	PositionX	15		
+	PositionY	25		
+	Width	13		
+	Height	24		
+	XAdvance	12		
+				
+Letter	    	'B'	
+	PositionX	29		
+	PositionY	25		
+	Width	13		
+	Height	24		
+	XAdvance	12		
+				
+Letter	    	'C'	
+	PositionX	43		
+	PositionY	25		
+	Width	13		
+	Height	24		
+	XAdvance	12		
+				
+Letter	    	'D'	
+	PositionX	57		
+	PositionY	25		
+	Width	13		
+	Height	24		
+	XAdvance	12		
+				
+Letter	    	'E'	
+	PositionX	71		
+	PositionY	25		
+	Width	13		
+	Height	24		
+	XAdvance	12		
+				
+Letter	    	'F'	
+	PositionX	85		
+	PositionY	25		
+	Width	13		
+	Height	24		
+	XAdvance	12		
+				
+Letter	    	'G'	
+	PositionX	99		
+	PositionY	25		
+	Width	13		
+	Height	24		
+	XAdvance	12		
+				
+Letter	    	'H'	
+	PositionX	113		
+	PositionY	25		
+	Width	13		
+	Height	24		
+	XAdvance	12		
+				
+Letter	    	'I'	
+	PositionX	127		
+	PositionY	25		
+	Width	13		
+	Height	24		
+	XAdvance	12		
+				
+Letter	    	'J'	
+	PositionX	141		
+	PositionY	25		
+	Width	13		
+	Height	24		
+	XAdvance	12		
+				
+Letter	    	'K'	
+	PositionX	155		
+	PositionY	25		
+	Width	13		
+	Height	24		
+	XAdvance	12		

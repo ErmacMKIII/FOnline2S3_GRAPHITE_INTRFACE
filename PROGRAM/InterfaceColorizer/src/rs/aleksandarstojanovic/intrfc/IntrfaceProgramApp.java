@@ -17,7 +17,7 @@ import javax.imageio.ImageIO;
  *
  * Each color variant is stored in its respective subdirectory.
  *
- * @author Alexander Stojanovich <coas91@rocketmail.com>
+ * @author Alksandar Stojanovic <coas91@rocketmail.com>
  */
 public class IntrfaceProgramApp {
 
@@ -28,9 +28,9 @@ public class IntrfaceProgramApp {
 
     // Directories for input and output files
     private static final String inDir = "C:\\Users\\coas9\\GitHub\\FOnline2S3_GRAPHITE_INTRFACE\\INTRFACE_SOURCE";
-    private static final String outDir = "C:\\Users\\coas9\\GitHub\\FOnline2S3_GRAPHITE_INTRFACE\\INTRFACE_PRODUCTION_CLK";
+    private static final String outDir = "C:\\Users\\coas9\\GitHub\\FOnline2S3_GRAPHITE_INTRFACE\\INTRFACE_PRODUCTION";
 
-    // Luminance coefficients based on the Rec. 709 standard
+    // Luminance coefficients based on the Rec.  709 standard
     private static final float LUMA_RED_COEFF = 0.299f;
     private static final float LUMA_GREEN_COEFF = 0.587f;
     private static final float LUMA_BLUE_COEFF = 0.114f;
@@ -46,7 +46,7 @@ public class IntrfaceProgramApp {
         Color[] colors = {BLUE_COLOR, GREEN_COLOR, Color.RED, Color.WHITE};
 
         // Subdirectory names under input directory (currently unused)
-        final String[] subDirs = {"clock_x"}; // Example: {"", "IFACE", "MainScreen", "Other", "WorldMap"};
+        final String[] subDirs = {"", "clock_x"}; // Example: {"", "IFACE", "MainScreen", "Other", "WorldMap"};
 
         // Ensure input and output directories exist
         File inDirFile = new File(inDir);
@@ -63,8 +63,25 @@ public class IntrfaceProgramApp {
                 for (String subDir : subDirs) {
                     File subDirFile = new File(inDirFile, subDir);
 
+                    // Skip if subdirectory doesn't exist
+                    if (!subDirFile.exists() || !subDirFile.isDirectory()) {
+                        System.out.println("Skipping non-existent directory: " + subDirFile.getAbsolutePath());
+                        continue;
+                    }
+
+                    // Create the corresponding output subdirectory
+                    File outputSubDir = new File(colorDir, subDir);
+                    if (!outputSubDir.exists()) {
+                        outputSubDir.mkdirs();
+                    }
+
                     // Process PNG files in the subdirectory
-                    for (File inputFile : subDirFile.listFiles()) {
+                    File[] files = subDirFile.listFiles();
+                    if (files == null) {
+                        continue;
+                    }
+
+                    for (File inputFile : files) {
                         if (inputFile.getName().toLowerCase().endsWith(".png")) {
                             try {
                                 // Read the input image
@@ -104,7 +121,10 @@ public class IntrfaceProgramApp {
                                 }
 
                                 // Write the processed image to the output directory
-                                File outputFile = new File(colorDir, inputFile.getName());
+                                File outputFile = new File(outputSubDir, inputFile.getName());
+                                if (outputFile.exists()) {
+                                    outputFile.delete();
+                                }
                                 ImageIO.write(img, "png", outputFile);
                                 System.out.println("Processed: " + outputFile.getAbsolutePath());
 

@@ -79,3 +79,9 @@ V2.6 release (Last Update: 2025-09-24)
 
 For Older Releases feel free to contact on Discord, Ermac #1844.
 Njoy using GRAPHITE interface!
+------------------------------------------------------------------------------------------------------------
+V2.6U release (Last Update: 2026-01-20)
+- Newest, brighter GRAPHITE Texture.
+- Removed artifacts (on images).
+- Post-Processing of images with Scalex3x algorithm.
+
